@@ -1,13 +1,13 @@
 #!/bin/bash
-mkdir pares
-mkdir impares
+touch par.txt
+touch impar.txt
 while read numero; do
     if [[ $(($numero%2)) == 0 ]];then
         pares=$((pares+1))
-        mkdir "pares/$numero"
+        echo $numero >> par.txt
     else
         impares=$((impares+1))
-        mkdir "impares/$numero"
+        echo $numero >> impar.txt
     fi
 done < ficheros_scripts/numeros.txt
 
